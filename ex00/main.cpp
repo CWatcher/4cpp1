@@ -6,7 +6,8 @@
 
 int	main()
 {
-	Zombie z("stack z");
+	Zombie z;
+	z.setName("stack z");
 	z.announce();
 
 	std::stringstream 	stream_name;

@@ -3,9 +3,12 @@
 class Zombie
 {
 public:
+	Zombie();
 	Zombie(std::string name);
 	void announce(void);
 	~Zombie();
+	std::string getName();
+	void setName(std:: string);
 private:
 	std::string _name;
 };
