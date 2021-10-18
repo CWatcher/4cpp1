@@ -1,4 +1,6 @@
 SRC			=	Zombie.cpp		\
+				newZombie.cpp	\
+				randomChump.cpp	\
 				main.cpp
 OBJ			=	$(SRC:.cpp=.o)
 NAME		=	Zombie
