@@ -4,7 +4,5 @@ make > /dev/null		\
 	&& echo make ok! 	\
 	|| exit 1
 
-#export MallocStackLogging=1
-#export MallocScribble=1
+valgrind aa 2> valgrind.log && grep "ERROR" valgrind.log
 
-leaks -quiet --atExit -- ./aa
