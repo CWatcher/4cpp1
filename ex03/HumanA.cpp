@@ -1,7 +1,8 @@
 #include "HumanA.hpp"
 #include <iostream>
 
-HumanA::HumanA(std::string name): _name(name), _pWeapon(NULL)
+HumanA::HumanA(std::string name, Weapon& weapon):
+	_name(name), _weapon(weapon)
 {}
 std::string HumanA::getName()
 {
@@ -11,15 +12,13 @@ void HumanA::setName(std::string name)
 {
 	_name = name;
 }
-void HumanA::setWeapon(Weapon& Weapon)
+void HumanA::setWeapon(Weapon& weapon)
 {
-	_pWeapon = &Weapon;
+	_weapon = weapon;
 }
 bool HumanA::attack()
 {
-	if (!_pWeapon)
-		return false;
 	std::cout << _name << " attacks with his "
-	          << _pWeapon->getType() << std::endl;
+	          << _weapon.getType() << std::endl;
 	return true;
 }
