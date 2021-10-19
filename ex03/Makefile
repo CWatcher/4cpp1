@@ -1,4 +1,5 @@
 SRC			=	Weapon.cpp	\
+				HumanA.cpp	\
 				HumanB.cpp	\
 				main.cpp
 OBJ			=	$(SRC:.cpp=.o)
