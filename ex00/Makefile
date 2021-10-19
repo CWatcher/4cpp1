@@ -3,7 +3,7 @@ SRC			=	Zombie.cpp		\
 OBJ			=	$(SRC:.cpp=.o)
 NAME		=	Zombie
 CXX			= 	clang++
-CXXFLAGS	= 	-Wextra -Wall -Werror -Wpedantic -g -fsanitize=address
+CXXFLAGS	= 	-Wextra -Wall -Werror -Wpedantic -g #-fsanitize=address
 
 %.o		: %.cpp Makefile
 	$(CXX) $(CXXFLAGS) -MMD -c $<

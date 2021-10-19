@@ -1,6 +1,10 @@
 #!/bin/zsh
 
-make > /dev/null && echo make ok! \
+make > /dev/null		\
+	&& echo make ok! 	\
 	|| exit 1
 
-./Zombie
+#export MallocStackLogging=1
+#export MallocScribble=1
+
+leaks -quiet --atExit -- ./Zombie

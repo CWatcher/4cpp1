@@ -6,13 +6,14 @@
 
 int	main()
 {
-	std::string 		name = "random z";
-	std::stringstream 	ss;
+	Zombie z("stack z");
+	z.announce();
 
-	ss << name << std::rand();
-	randomChump(ss.str());
+	std::stringstream 	stream_name;
+	stream_name << "random z" << std::rand();
+	randomChump(stream_name.str());
 
 	Zombie	*pz = newZombie("heap z");
 	pz->announce();
-	delete pz;
+   delete pz;
 }
