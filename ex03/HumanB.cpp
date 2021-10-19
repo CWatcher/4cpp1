@@ -3,19 +3,19 @@
 
 HumanB::HumanB(std::string name): _name(name), _pWeapon(NULL)
 {}
-std::string HumanB::getName()
+const std::string&	HumanB::getName()
 {
 	return _name;
 }
-void HumanB::setName(std::string name)
+void	HumanB::setName(std::string name)
 {
 	_name = name;
 }
-void HumanB::setWeapon(Weapon& weapon)
+void	HumanB::setWeapon(Weapon& weapon)
 {
 	_pWeapon = &weapon;
 }
-bool HumanB::attack()
+bool	HumanB::attack()
 {
 	if (!_pWeapon)
 		return false;
