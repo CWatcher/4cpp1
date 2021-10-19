@@ -7,13 +7,15 @@ NAME		=	Zombie
 CXX			= 	clang++
 CXXFLAGS	= 	-Wextra -Wall -Werror -Wpedantic -g #-fsanitize=address
 
+all		: $(NAME)
+
+-include  $(SRC:.cpp=.d)
+
 %.o		: %.cpp Makefile
 	$(CXX) $(CXXFLAGS) -MMD -c $<
 
 $(NAME)	: $(OBJ) Makefile
-	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJ)
-
-all		: $(NAME)
+	$(CXX) $(CXXFLAGS) -o $@ $(OBJ)
 
 clean	:
 	$(RM) $(OBJ)
