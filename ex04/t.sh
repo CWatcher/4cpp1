@@ -4,5 +4,6 @@ make > /dev/null		\
 	&& echo make ok! 	\
 	|| exit 1
 
-valgrind aa in.txt "a" "b" 2> valgrind.log && grep "ERROR" valgrind.log
+valgrind --leak-check=full -q aa in.txt "a" "b"
 cat in.txt.replace
+rm in.txt.replace
