@@ -50,9 +50,7 @@ int		main(int argc, char* argv[])
 		          << inFileName << ".replace" << std::endl;
 		return 3;
 	}
-	std::string 	line;
-	while(fIn) {
-		std::getline(fIn, line);
-		fOut << line << std::endl;
-	}
+	std::string 	s;
+	fIn >> s;
+	std::cout << s;
 }
