@@ -1,5 +1,5 @@
 SRC			= main.cpp
-NAME		= aa
+NAME		= replace
 CXX			= clang++
 CXXFLAGS	= -Wextra -Wall -Werror -Wpedantic -g #-fsanitize=address
 
