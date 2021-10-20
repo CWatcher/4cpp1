@@ -1,6 +1,7 @@
 #include <string>
 #include <fstream>
 #include <iostream>
+#include <sstream>
 
 namespace ft
 {
@@ -50,7 +51,8 @@ int		main(int argc, char* argv[])
 		          << inFileName << ".replace" << std::endl;
 		return 3;
 	}
-	std::string 	s;
-	fIn >> s;
+	std::string 		s;
+	std::stringstream 	ss;
+	ss << fIn.rdbuf();
 	std::cout << s;
 }
