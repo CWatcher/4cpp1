@@ -5,17 +5,18 @@
 
 namespace ft
 {
-	void replace(std::string& line, const char* s)
+	void replace(const std::string& s,
+		const std::string& s1, const std::string& s2, std::ofstream& fOut)
 	{
-		std::string line2;
+		size_t	pos = 0;
+		size_t 	replacePos = 0;
+		while(replacePos < s.length())
 		{
-			size_t	pos = 0;
-			size_t 	replace_pos = line.find(s);
-			line2 = line.substr(0, replace_pos);
-			if (replace_pos < line.length())
-				line2.append(s);
-			pos = replace_pos;
-
+			replacePos = s.find(s1, pos);
+			fOut << s.substr(pos, replacePos);
+			if (replacePos < s.length())
+				fOut << s2;
+			pos = replacePos + s1.length();
 		}
 	}
 }
@@ -54,5 +55,5 @@ int		main(int argc, char* argv[])
 	std::string 		s;
 	std::stringstream 	ss;
 	ss << fIn.rdbuf();
-	std::cout << ss.str();
+	ft::replace(ss.str(), argv[2], argv[3], fOut);
 }
