@@ -6,7 +6,7 @@ SRC			=	Zombie.cpp		\
 OBJ			=	$(SRC:.cpp=.o)
 NAME		=	Zombie
 CXX			= 	clang++
-CXXFLAGS	= 	-Wextra -Wall -Werror -Wpedantic -g #-fsanitize=address
+CXXFLAGS	= 	-Wextra -Wall -Werror -Wpedantic -std=c++98 -g #-fsanitize=address
 
 all		: $(NAME)
 

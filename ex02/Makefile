@@ -1,7 +1,7 @@
 SRC			= main.cpp
 NAME		= aa
 CXX			= clang++
-CXXFLAGS	= -Wextra -Wall -Werror -Wpedantic -g
+CXXFLAGS	= -Wextra -Wall -Werror -Wpedantic -std=c++98 -g
 
 $(NAME)	: $(SRC) Makefile
 	$(CXX) $(CXXFLAGS) -o $(NAME) $(SRC)

@@ -37,12 +37,14 @@ int		main(int argc, char* argv[])
 	if (!checkArgs(argc, argv))
 		return 1;
 	std::string		inFileName(argv[1]);
-	std::ifstream	fIn(inFileName);
+	std::ifstream	fIn;
+	fIn.open(inFileName.c_str());
 	if (!fIn) {
 		std::cerr << "Bad file" << std::endl;
 		return 2;
 	}
-	std::ofstream 	fOut(inFileName.append(".replace"));
+	std::ofstream 	fOut;
+	fOut.open(inFileName.append(".replace").c_str());
 	if (!fOut) {
 		std::cerr << "Failed to create/open "
 		          << inFileName << ".replace" << std::endl;

@@ -1,7 +1,7 @@
 SRC			= main.cpp
 NAME		= replace
 CXX			= clang++
-CXXFLAGS	= -Wextra -Wall -Werror -Wpedantic -g #-fsanitize=address
+CXXFLAGS	= -Wextra -Wall -Werror -Wpedantic -std=c++98 -g #-fsanitize=address
 
 $(NAME)	: $(SRC) Makefile
 	$(CXX) $(CXXFLAGS) -o $(NAME) $(SRC)
