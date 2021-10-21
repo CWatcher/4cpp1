@@ -4,6 +4,15 @@ make > /dev/null		\
 	&& echo make ok! 	\
 	|| exit 1
 
-valgrind --leak-check=full -q replace in.txt "bb" "r"
-cat in.txt.replace
-rm in.txt.replace
+./tt.sh in.txt "bb" "r"
+./tt.sh in.txt "b" "r"
+./tt.sh in.txt "b" "rr"
+./tt.sh Makefile "o" "Y"
+./tt.sh Makefile "pp" "PP"
+./tt.sh Makefile "pp" "P"
+./tt.sh Makefile "p" "PP"
+./tt.sh Makefile "pp" "pp"
+./tt.sh Makefile "pp" "p"
+./tt.sh Makefile "p" "pp"
+# replace in.txt "a
+# b" "r"
