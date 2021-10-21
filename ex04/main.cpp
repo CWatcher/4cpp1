@@ -13,8 +13,8 @@ namespace ft
 		while(replacePos < s.length())
 		{
 			replacePos = s.find(s1, pos);
-			fOut << s.substr(pos, replacePos);
-			if (replacePos < s.length())
+			fOut << s.substr(pos, replacePos - pos);
+			if (replacePos < s.length() - 1)
 				fOut << s2;
 			pos = replacePos + s1.length();
 		}
