@@ -6,11 +6,11 @@ class Karen
 {
 public:
 	void complain(std::string level);
+private:
 	struct LevelFunctionEntry {
 		std::string 	level;
 		void (Karen::	*function)(void);
 	};
-private:
 	void debug(void);
 	void info(void);
 	void warning(void);
