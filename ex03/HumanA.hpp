@@ -7,8 +7,8 @@ class HumanA
 {
 public:
 	HumanA(std::string name, Weapon& weapon);
-	bool attack();
-	const std::string& getName();
+	bool attack() const;
+	const std::string& getName() const;
 	void setName(std:: string);
 	void setWeapon(Weapon& Weapon);
 private:
