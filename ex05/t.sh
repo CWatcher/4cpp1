@@ -6,4 +6,12 @@ make > /dev/null		\
 
 #valgrind --leak-check=full -q ./aa
 valgrind -q ./aa
-#leaks -quiet --atExit -- ./aa
+valgrind -q ./aa debug
+valgrind -q ./aa warning
+valgrind -q ./aa error
+valgrind -q ./aa nothing
+# leaks -quiet --atExit -- ./aa
+# leaks -quiet --atExit -- ./aa debug
+# leaks -quiet --atExit -- ./aa warning
+# leaks -quiet --atExit -- ./aa error
+# leaks -quiet --atExit -- ./aa nothing

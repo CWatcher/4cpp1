@@ -1,10 +1,9 @@
 #include "Karen.hpp"
 #include <iostream>
 
-int main()
+int main(int, char** argv)
 {
 	Karen karen;
-	karen.complain("debug");
-	karen.complain("error");
-	karen.complain("nothing");
+	if (*argv && *++argv)
+		karen.complain(*argv);
 }
