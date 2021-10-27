@@ -42,8 +42,12 @@ int		main(int argc, char* argv[])
 	std::ifstream	fIn;
 	fIn.open(inFileName.c_str());
 	if (!fIn) {
-		std::cerr << "Bad file" << std::endl;
+		std::cerr  << inFileName << " is bad file" << std::endl;
 		return 2;
+	}
+	if (fIn.peek() == std::ifstream::traits_type::eof()) {
+		std::cerr << inFileName << " is empty file" << std::endl;
+		return 4;
 	}
 	std::ofstream 	fOut;
 	fOut.open(inFileName.append(".replace").c_str());
@@ -55,5 +59,6 @@ int		main(int argc, char* argv[])
 	std::string 		s;
 	std::stringstream 	ss;
 	ss << fIn.rdbuf();
+
 	ft::replace(ss.str(), argv[2], argv[3], fOut);
 }
