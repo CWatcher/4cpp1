@@ -17,7 +17,12 @@ void Karen::complain(std::string level)
 	while (i < sizeof(functionsDic) / sizeof(functionsDic[0]) - 1
 	       && level != functionsDic[i].level)
 		i++;
-	(this->*functionsDic[i].function)();
+	switch (i) {
+		case 0: (this->*functionsDic[i++].function)();
+		case 1: (this->*functionsDic[i++].function)();
+		case 2: (this->*functionsDic[i++].function)();
+		case 3: (this->*functionsDic[i++].function)();
+	}
 }
 void Karen::debug(void)
 {
