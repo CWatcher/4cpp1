@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/sh
 
 make > /dev/null		\
 	&& echo make ok! 	\

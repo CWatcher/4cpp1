@@ -4,4 +4,5 @@ make > /dev/null		\
 	&& echo make ok! 	\
 	|| exit 1
 
-leaks -quiet --atExit -- ./aa
+#leaks -quiet --atExit -- ./aa
+valgrind -q ./aa

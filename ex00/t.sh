@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/sh
 
 make > /dev/null		\
 	&& echo make ok! 	\
@@ -7,4 +7,5 @@ make > /dev/null		\
 #export MallocStackLogging=1
 #export MallocScribble=1
 
-leaks -quiet --atExit -- ./Zombie
+#leaks -quiet --atExit -- ./Zombie
+valgrind -q ./Zombie
