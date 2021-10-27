@@ -18,10 +18,11 @@ void Karen::complain(std::string level)
 	       && level != functionsDic[i].level)
 		i++;
 	switch (i) {
-		case 0: (this->*functionsDic[i++].function)();
-		case 1: (this->*functionsDic[i++].function)();
-		case 2: (this->*functionsDic[i++].function)();
-		case 3: (this->*functionsDic[i++].function)();
+		case 0:  (this->*functionsDic[i++].function)();
+		case 1:  (this->*functionsDic[i++].function)();
+		case 2:  (this->*functionsDic[i++].function)();
+		case 3:  (this->*functionsDic[i++].function)();
+		default: (this->*functionsDic[i++].function)();
 	}
 }
 void Karen::debug(void)
