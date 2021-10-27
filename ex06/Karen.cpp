@@ -1,17 +1,16 @@
 #include "Karen.hpp"
 #include <iostream>
 
-
+const Karen::LevelFunctionEntry Karen::functionsDic[] = {
+	{"debug"  , &Karen::debug  },
+	{"info"   , &Karen::info   },
+	{"warning", &Karen::warning},
+	{"error"  , &Karen::error  },
+	{"none"   , &Karen::none   },
+};
 
 void Karen::complain(std::string level) const
 {
-	Karen::LevelFunctionEntry functionsDic[] = {
-		{"debug"  , &Karen::debug},
-		{"info"   , &Karen::info},
-		{"warning", &Karen::warning},
-		{"error"  , &Karen::error},
-		{"none"   , &Karen::none},
-	};
 	size_t i = 0;
 
 	while (i < sizeof(functionsDic) / sizeof(functionsDic[0]) - 1
