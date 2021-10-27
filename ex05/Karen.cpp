@@ -10,18 +10,14 @@ void Karen::complain(std::string level)
 		{"info"   , &Karen::info},
 		{"warning", &Karen::warning},
 		{"error"  , &Karen::error},
+		{"none"   , &Karen::none},
 	};
 	size_t i = 0;
 
-	while (i < sizeof(functionsDic) / sizeof(Karen::LevelFunctionEntry))
-	{
-		if (level == functionsDic[i].level)
-		{
-			(this->*functionsDic[i].function)();
-			return;
-		}
+	while (i < sizeof(functionsDic) / sizeof(functionsDic[0]) - 1
+	       && level != functionsDic[i].level)
 		i++;
-	}
+	(this->*functionsDic[i].function)();
 }
 void Karen::debug(void)
 {
@@ -49,3 +45,5 @@ void Karen::error(void)
 	std::cout << "This is unacceptable, I want to speak to the manager now."
 		      << std::endl;
 }
+void Karen::none(void)
+{}
