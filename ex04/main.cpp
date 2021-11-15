@@ -50,7 +50,7 @@ int		main(int argc, char* argv[])
 		return 4;
 	}
 	std::ofstream 	fOut;
-	fOut.open(inFileName.append(".replace").c_str());
+	fOut.open( ( inFileName + ".replace" ).c_str() );
 	if (!fOut) {
 		std::cerr << "Failed to create/open "
 		          << inFileName << ".replace" << std::endl;
